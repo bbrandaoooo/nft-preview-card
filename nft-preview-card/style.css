@@ -1,0 +1,149 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    translate: 0 +30%; 
+    font-family: 'Outfit', 'sans-serif';
+    background-color: hsl(217, 54%, 11%);
+    font-size: 18px;
+}
+
+
+.card {
+    width: 300px;
+    padding: 16px;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.image-holder {
+    width: 100%;
+    height: 260px;
+    border-radius: 5px;
+    overflow: hidden; 
+    cursor: pointer;
+    position: relative;
+}
+
+.image-holder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: hsl(178, 100%, 50%);
+    opacity: 0;
+    transition: 0.5s opacity;
+}
+
+.image-holder:hover::before {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-holder .equilibrium {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s transform;
+}
+
+.image-holder .view-icon {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s 0.2s opacity;
+}
+
+.image-holder:hover .view-icon {
+    opacity: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content h4 {
+    color: white;
+    font-weight: bold;
+}
+
+.content h4:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+    transition: 0.5s 0.2s opacity;
+}
+
+.content > p {
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;    
+}
+
+.price-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.price-time {
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+    padding-bottom: 16px;
+}
+
+.price-time .eth, .price-time .time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.eth {
+    color: hsl(178, 100%, 50%);
+    font-weight: bold;
+}
+
+.time {
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: -10px;
+    color: white;
+    text-align: center;
+}
+
+.profile .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+strong:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+    transition: 0.5s 0.2s opacity;
+}
